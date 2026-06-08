@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><title> <img src="GUBI LABS SVG.svg" alt="Nombre de tu Empresa - Página de Inicio" class="logo-img">| Espacio para Riders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #39FF14;
+            --primary-orange: #FF6B00;
+            --dark-black: #0D0D0D;
+            --beige: #F7F4EB;
+            --dark-gray: #393E46;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--beige);
+            color: var(--dark-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            background: var(--dark-black);
+            color: var(--primary-green);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary-green);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .nav-tag {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--primary-orange);
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-black) 0%, #1a1a1a 100%);
+            color: var(--beige);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(57, 255, 20, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 107, 0, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(60px, 10vw, 120px);
+            margin-bottom: 20px;
+            color: var(--primary-green);
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 32px;
+            color: var(--primary-orange);
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--dark-black);
+            font-weight: 900;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--primary-orange);
+            color: var(--beige);
+            font-weight: 900;
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
+        }
+
+        /* ============ FEATURES SECTION ============ */
+        .features {
+            padding: 100px 0;
+            background: var(--beige);
+        }
+
+        .section-title {
+            font-size: 64px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--dark-black);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--dark-black);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .feature-card:nth-child(odd) {
+            border-color: var(--primary-green);
+        }
+
+        .feature-card:nth-child(even) {
+            border-color: var(--primary-orange);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .feature-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 28px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .feature-card:nth-child(even) h3 {
+            color: var(--primary-orange);
+        }
+
+        .feature-card p {
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        /* ============ ABOUT SECTION ============ */
+        .about {
+            padding: 100px 0;
+            background: var(--dark-black);
+            color: var(--beige);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 48px;
+            color: var(--primary-green);
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .about-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .color-block {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--dark-black);
+        }
+
+        .block-green {
+            background: var(--primary-green);
+        }
+
+        .block-orange {
+            background: var(--primary-orange);
+        }
+
+        .block-black {
+            background: var(--dark-gray);
+            color: var(--beige);
+        }
+
+        .block-beige {
+            background: var(--beige);
+            border: 2px solid var(--dark-gray);
+        }
+
+        /* ============ SERVICES SECTION ============ */
+        .services {
+            padding: 100px 0;
+            background: var(--beige);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-box {
+            background: var(--dark-black);
+            padding: 50px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 5px solid var(--primary-green);
+            transition: var(--transition);
+        }
+
+        .service-box:nth-child(2) {
+            border-left-color: var(--primary-orange);
+        }
+
+        .service-box:nth-child(3) {
+            border-left-color: var(--primary-green);
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-box h3 {
+            font-size: 32px;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .service-box:nth-child(2) h3 {
+            color: var(--primary-orange);
+        }
+
+        .service-box p {
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        /* ============ CTA SECTION ============ */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-orange) 100%);
+            text-align: center;
+            color: var(--dark-black);
+        }
+
+        .cta h2 {
+            font-size: 64px;
+            margin-bottom: 30px;
+        }
+
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            background: var(--dark-black);
+            color: var(--primary-green);
+            font-weight: 900;
+        }
+
+        .cta .btn:hover {
+            background: var(--beige);
+            color: var(--primary-orange);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--dark-black);
+            color: var(--beige);
+            padding: 60px 0 20px;
+            text-align: center;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .footer-content {
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 48px;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-link {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 60px; }
+            .section-title { font-size: 40px; }
+            .about-content { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    
+.logo-img{
+    height: 50px;
+    width: auto;
+    display:block;
+}
+.hero-logo{
+    max-width: 280px;
+    width: 40%;
+    height: auto;
+    margin: 0 auto 20px;
+    display:block;
+}
+
+</style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo"><img src="GUBI LABS PNG.png" alt="GUBI Labs" class="logo-img"></a>
+            <div class="nav-tag">BILBAO • RIDERS</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <img src="GUBI LABS PNG.png" alt="GUBI Labs" class="hero-logo">
+            <h2 class="hero-subtitle">Espacio para Riders</h2>
+            <p class="hero-description">
+                Un lugar donde los repartidores de comida puedan descansar y tomar un respiro mientras esperan su próximo pedido. Recarga energías, arregla tu bicicleta o patinete eléctrico, y conecta con una comunidad de riders.
+            </p>
+            <div class="btn-group">
+                <a href="#servicios" class="btn btn-primary">Descubre Servicios</a>
+                <a href="#contacto" class="btn btn-secondary">Únete a !GUBI</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué !GUBI?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚴</div>
+                    <h3>Descanso Seguro</h3>
+                    <p>Un espacio dedicado para que descanses cómodamente entre entregas, lejos del tráfico y del estrés urbano.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔋</div>
+                    <h3>Recarga de Energía</h3>
+                    <p>Acceso a agua, snacks saludables y zonas de descanso para recuperar fuerzas durante tu jornada.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Taller de Reparación</h3>
+                    <p>Herramientas y asistencia técnica para reparar tu bicicleta o patinete eléctrico cuando lo necesites.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Comunidad Riders</h3>
+                    <p>Conecta con otros riders, comparte experiencias y forma parte de una comunidad solidaria y colaborativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>Nuestra Misión</h2>
+                <p>
+                    !GUBI nace con la intención de mejorar la calidad de vida de los repartidores de comida en Bilbao. Entendemos los desafíos que enfrentas a diario: largas jornadas, falta de espacios seguros y la necesidad constante de mantener tu equipo en perfecto estado.
+                </p>
+                <p>
+                    Por eso hemos creado un espacio pensado específicamente para ti. Un lugar donde no solo puedes descansar, sino también cuidar de tu salud, mantener tu bicicleta o patinete, y ser parte de una comunidad que te entiende y te apoya.
+                </p>
+            </div>
+            <div class="about-visual">
+                <img src="personal-entrega-motocicletas-concepto-compras_1150-34879.avif" alt="Esquema del Método GUBI" style="width: 300%; height: auto; border-radius: 20px;">
+
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3>Zona de Descanso</h3>
+                    <p>Sillas cómodas, mesas, aire acondicionado y WiFi gratuito para que descanses en condiciones óptimas.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Taller Técnico</h3>
+                    <p>Herramientas profesionales, piezas de repuesto y asesoramiento técnico para mantener tu equipo en perfecto estado.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Punto de Hidratación</h3>
+                    <p>Agua potable, bebidas refrescantes y snacks nutritivos para mantener tu energía durante el día.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="cta">
+        <div class="container">
+            <h2>¡Únete a la Comunidad !GUBI</h2>
+            <p>Somos el espacio que los riders de Bilbao necesitaban. Ven a conocernos y sé parte de esta revolución en el cuidado de los repartidores.</p>
+            <a href="#" class="btn btn-primary">Contactar Ahora</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">!GUBI</div>
+            <p class="footer-text">Espacio para Riders | Bilbao</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Instagram</a>
+                <a href="#" class="footer-link">Facebook</a>
+                <a href="#" class="footer-link">Contacto</a>
+                <a href="index_zenda.html" class="footer-link">Mas Proyectos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 !GUBI. Todos los derechos reservados. Creado con ❤️ para los riders de Bilbao.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
