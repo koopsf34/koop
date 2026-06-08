@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método BINI | Innovación e Incubación en Bilbao</title>
+    <link rel="icon" href="Captura de pantalla 2026-06-01 092805.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #003399; /* Azul Bilbao Profundo */
+            --secondary-gold: #D4AF37; /* Dorado Metálico */
+            --accent-red: #E63946;
+            --light-bg: #F8FAFC;
+            --dark-text: #0F172A;
+            --medium-text: #475569;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 51, 153, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .font-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            padding: 20px 0;
+            background: var(--white);
+            border-bottom: 1px solid #edf2f7;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-tag {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--secondary-gold);
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-logo {
+            max-width: 300px;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: var(--medium-text);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-gold);
+            color: var(--white);
+            border: 2px solid var(--secondary-gold);
+        }
+
+        .btn-secondary:hover {
+            opacity: 0.9;
+            transform: translateY(-3px);
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 51, 153, 0.2);
+            border: 4px solid var(--white);
+        }
+
+        /* ============ BINI INTRO ============ */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: var(--secondary-gold);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 64px;
+            line-height: 1;
+            margin-bottom: 40px;
+            color: var(--primary-blue);
+        }
+
+        .bini-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .bini-text {
+            font-size: 18px;
+            color: var(--medium-text);
+        }
+
+        .bini-badge {
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--secondary-gold);
+            margin-bottom: 20px;
+        }
+
+        /* ============ CARDS SECTION ============ */
+        .bg-light { background: var(--light-bg); }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .feature-card h3 {
+            font-size: 28px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* ============ HOST SECTION ============ */
+        .bg-blue {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .host-flex {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .host-list {
+            list-style: none;
+        }
+
+        .host-list li {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 35px;
+            font-size: 18px;
+        }
+
+        .host-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-gold);
+            font-weight: 900;
+            font-size: 24px;
+        }
+
+        .compensation-box {
+            background: var(--secondary-gold);
+            color: var(--dark-text);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            flex-shrink: 0;
+            width: 350px;
+        }
+
+        .compensation-amount {
+            font-size: 60px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        /* ============ TIMELINE ============ */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-num {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 24px;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover .step-num {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            padding: 80px 0 40px;
+            background: #0a0f1d;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 48px;
+            color: var(--secondary-gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: var(--secondary-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .bini-grid, .host-flex { grid-template-columns: 1fr; flex-direction: column; }
+            .section-title { font-size: 48px; }
+            .timeline { flex-direction: column; gap: 40px; }
+            .timeline::before { display: none; }
+            .compensation-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="nav-brand font-bebas">MÉTODO BINI</a>
+            <div class="nav-tag font-bebas">BILBAO • INNOVACIÓN SOCIAL</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="Captura de pantalla 2026-06-01 092805.png" alt="BINI Logo" class="hero-logo">
+            <p class="hero-description">
+                Creando nuevas formas de emprendimiento accesible mediante el modelo <strong>Shop-in-Shop</strong>. Conectamos talento local con comercios consolidados en el corazón de Bilbao.
+            </p>
+            <div class="btn-group">
+                <a href="#emprendedores" class="btn btn-primary">Soy Emprendedor</a>
+                <a href="#host" class="btn btn-secondary">Soy Comercio Host</a>
+            </div>
+            <div class="video-container">
+                <video controls style="width: 100%; display: block;">
+                    <source src="BINI23-05-2026_github.mp4" type="video/mp4">
+                    Tu navegador no soporta video.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="bini-grid">
+                <div>
+                    <span class="section-label">Bienvenido a BINI</span>
+                    <h2 class="section-title">Un modelo para crear<br>oportunidades reales</h2>
+                    <div class="bini-text">
+                        <p style="margin-bottom: 20px;">BINI es una incubadora de empleo y emprendimiento colaborativo diseñada para revitalizar el tejido social y económico del barrio.</p>
+                        <p>Conectamos de forma directa a personas emprendedoras con negocios ya existentes para que puedan validar sus ideas con un coste inicial drásticamente reducido.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="bini-badge">
+                        <strong>Negocios Sostenibles:</strong> Modelos arraigados en la comunidad con visión a largo plazo.
+                    </div>
+                    <div class="bini-badge">
+                        <strong>Modelo Shop-in-Shop:</strong> Incubación de tu actividad dentro de un espacio compartido.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="emprendedores" class="section-padding bg-light">
+        <div class="container">
+            <span class="section-label">Convocatoria Abierta</span>
+            <h2 class="section-title">¿Por qué emprender con BINI?</h2>
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Espacio Gratis</h3>
+                    <p>Desarrolla tu actividad en un negocio colaborador sin alquileres ni facturas iniciales.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Cero Riesgo</h3>
+                    <p>Valida tu proyecto de forma real antes de realizar grandes inversiones económicas.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Formación</h3>
+                    <p>Recibe seguimiento continuo y mentoría personalizada durante todo el proceso.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Plan de Negocio</h3>
+                    <p>Te ayudamos a estructurar y preparar tu proyecto para consolidarte en el mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="host" class="section-padding bg-blue">
+        <div class="container">
+            <div class="host-flex">
+                <div style="flex: 1;">
+                    <span class="section-label" style="color: var(--secondary-gold);">Comercios Colaboradores</span>
+                    <h2 class="section-title" style="color: var(--white);">Conviértete en Comercio Host-Mentor</h2>
+                    <ul class="host-list">
+                        <li><strong>Cede un espacio:</strong> Optimiza rincones en desuso de tu local.</li>
+                        <li><strong>Acompaña el talento:</strong> Comparte tu experiencia guiando al nuevo emprendedor.</li>
+                        <li><strong>Sinergias:</strong> Atrae nuevos clientes y dinamiza tu tráfico en tienda.</li>
+                    </ul>
+                </div>
+                <div class="compensation-box">
+                    <h3 class="font-bebas" style="font-size: 32px;">Compensación Económica</h3>
+                    <div class="compensation-amount">300€ - 500€</div>
+                    <p style="font-size: 14px; font-weight: 600;">AL MES NETOS</p>
+                    <p style="font-size: 12px; margin-top: 15px; opacity: 0.8;">Condicionado según el espacio cedido y el nivel de acompañamiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <span class="section-label">Ecosistema</span>
+            <h2 class="section-title">Servicios de Incubación</h2>
+            <div class="bini-grid">
+                <div class="feature-card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h3 style="font-size: 36px;">Venture Builder</h3>
+                    <p style="margin-bottom: 30px;">Identificamos oportunidades de mercado y conectamos tus aptitudes con modelos de negocio viables.</p>
+                    <img src="PHOTO-2026-05-25-11-03-16 4.jpg" alt="Venture Builder" style="width: 100%; border-radius: 8px;">
+                </div>
+                <div class="feature-card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h3 style="font-size: 36px;">Marketing & Redes</h3>
+                    <p style="margin-bottom: 30px;">Identidad visual, contenido multimedia y diseño de tu propia página web profesional.</p>
+                    <img src="PHOTO-2026-05-25-11-03.jpg" alt="Marketing" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <span class="section-label">Fases</span>
+            <h2 class="section-title">Cronograma del Método</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="step-num">1</div>
+                    <p style="font-weight: 800; color: var(--primary-blue);">MAYO - AGOSTO</p>
+                    <p style="font-size: 14px;">Convocatoria y entrevistas</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-num">2</div>
+                    <p style="font-weight: 800; color: var(--primary-blue);">SEPTIEMBRE</p>
+                    <p style="font-size: 14px;">Formación y talleres</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-num">3</div>
+                    <p style="font-weight: 800; color: var(--primary-blue);">OCTUBRE</p>
+                    <p style="font-size: 14px;">Incubación física en local</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="container">
+            <h2 class="footer-logo font-bebas">KOOP SF34 • MÉTODO BINI</h2>
+            <p style="max-width: 600px; margin: 0 auto 40px; color: #94a3b8;">
+                Construye tu proyecto en un entorno colaborativo, accesible y pensado para crecer contigo. Somos una comunidad unida en el corazón de Bilbao.
+            </p>
+            <div class="footer-links">
+                <a href="mailto:coordinacion@koopsf34.org" class="footer-link">coordinacion@koopsf34.org</a>
+                <a href="tel:946756347" class="footer-link">946 75 63 47</a>
+                <a href="https://maps.app.goo.gl/gYFox2ct2J4839PR7" class="footer-link">UBICACIÓN</a>
+                <a href="index_gubi.html" class="footer-link">MAS SOBRE NOSOTROS</a>
+            </div>
+            <p style="font-size: 12px; color: #475569; margin-top: 40px;">
+                &copy; 2026 KOOP SF34. Colaboran: Asoc. Comercios y Empresas San Francisco, Bilbao La Vieja y Zabala | Gobierno Vasco.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
